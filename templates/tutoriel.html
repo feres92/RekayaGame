@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Tutoriel{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Tutoriel : Les Variables et les Types</h1>
+    <p>x est un entier: 5, y est un float: 3.5, name est une chaîne de caractères: Python</p>
+    <a href="{{ url_for('defi_1') }}">Passer au défi 1</a>
+</div>
+{% endblock %}

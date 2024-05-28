@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Défi 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Défi 1 : Variables et Opérations</h1>
+        <form method="post">
+            <label for="a">Entrez un nombre:</label>
+            <input type="number" id="a" name="a" required>
+            <label for="b">Entrez un autre nombre:</label>
+            <input type="number" id="b" name="b" required>
+            <button type="submit">Calculer la somme</button>
+        </form>
+        {% if result is not none %}
+            <p>La somme de {{ request.form['a'] }} et {{ request.form['b'] }} est {{ result }}</p>
+        {% endif %}
+        <a href="{{ url_for('defi_2') }}">Passer au défi 2</a>
+        <div class="control-buttons">
+            <a href="{{ url_for('index') }}">Arrêter le jeu</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Défi 4</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Défi 4 : Listes</h1>
+        <form method="post">
+            <label for="elements">Entrez des éléments (séparés par des virgules):</label>
+            <input type="text" id="elements" name="elements" required>
+            <button type="submit">Ajouter à la liste</button>
+        </form>
+        {% if elements is not none %}
+            <p>Votre liste: {{ elements }}</p>
+        {% endif %}
+        <div class="control-buttons">
+            <a href="{{ url_for('index') }}">Arrêter le jeu</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

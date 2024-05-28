@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Défi 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Défi 3 : Boucles</h1>
+        <form method="post">
+            <button type="submit">Afficher les nombres de 1 à 10</button>
+        </form>
+        {% if numbers is not none %}
+            <ul>
+                {% for number in numbers %}
+                    <li>{{ number }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="{{ url_for('defi_4') }}">Passer au défi 4</a>
+        <div class="control-buttons">
+            <a href="{{ url_for('index') }}">Arrêter le jeu</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
